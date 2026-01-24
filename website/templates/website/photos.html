@@ -1,0 +1,38 @@
+{# website/templates/website/photos.html #}
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}Photo Gallery – Super Suburban{% endblock %}
+
+{% block content %}
+<section class="py-16 bg-gray-900 text-center">
+  <h2 class="text-3xl font-bold mb-8 text-white">Photo Gallery</h2>
+
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+    {% for photo in photos %}
+      <div>
+        <img 
+          src="{{ photo.image.url }}" 
+          alt="{{ photo.title }}" 
+          class="w-full rounded shadow-lg"
+        />
+        {% if photo.caption %}
+          <p class="text-sm text-gray-300 mt-2">{{ photo.caption }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <a 
+    href="{% url 'work' %}" 
+    class="mt-8 inline-block text-yellow-500 hover:text-yellow-400 underline"
+  >
+    ← Back to Our Work
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 bg-black text-center text-gray-500">
+  &copy; {{ now|date:"Y" }} Super Suburban
+</footer>
+{% endblock %}

@@ -1,0 +1,111 @@
+{# website/templates/website/contact.html #}
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}Contact – Super Suburban{% endblock %}
+
+{% block content %}
+  <!-- HEADER IMAGE -->
+  <section
+    class="relative h-80 bg-cover bg-center"
+    style="background-image:url({% static 'images/contact-bg.jpg' %});"
+  >
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <h1 class="text-4xl font-bold text-white">Get In Touch</h1>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      {% if messages %}
+        <ul class="mb-6 space-y-2">
+          {% for msg in messages %}
+          <li class="bg-green-100 border border-green-400 text-green-800 px-4 py-2 rounded">
+            {{ msg }}
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <form method="post" class="space-y-8">
+        {% csrf_token %}
+
+        <!-- name -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="first_name" class="block text-lg font-semibold mb-2">First Name</label>
+            <input
+              id="first_name"
+              name="first_name"
+              type="text"
+              required
+              class="w-full p-4 border border-gray-300 rounded"
+            />
+          </div>
+          <div>
+            <label for="last_name" class="block text-lg font-semibold mb-2">Last Name</label>
+            <input
+              id="last_name"
+              name="last_name"
+              type="text"
+              class="w-full p-4 border border-gray-300 rounded"
+            />
+          </div>
+        </div>
+
+        <!-- email -->
+        <div>
+          <label for="email" class="block text-lg font-semibold mb-2">Email Address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="w-full p-4 border border-gray-300 rounded"
+          />
+        </div>
+
+        <!-- subject -->
+        <div>
+          <label for="subject" class="block text-lg font-semibold mb-2">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            required
+            class="w-full p-4 border border-gray-300 rounded"
+          />
+        </div>
+
+        <!-- message -->
+        <div>
+          <label for="message" class="block text-lg font-semibold mb-2">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            class="w-full p-4 border border-gray-300 rounded"
+          ></textarea>
+        </div>
+
+        <!-- submit -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="px-8 py-3 bg-black text-white font-semibold rounded hover:bg-gray-800 transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-gray-100 text-center text-gray-600">
+    &copy; {{ now|date:"Y" }} Super Suburban
+  </footer>
+{% endblock %}

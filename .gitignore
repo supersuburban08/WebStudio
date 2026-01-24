@@ -1,0 +1,81 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media
+/staticfiles
+
+# Virtual Environment
+.venv
+venv/
+env/
+ENV/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Python
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Static files
+/static/
+!.gitkeep
+
+# Migrations (optional - uncomment to ignore)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Node modules (if using any frontend tools)
+node_modules/
+npm-debug.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# IDE specific
+.pycharm_helpers/
+*.iml
+.venv/
+# Mac OS
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+$RECYCLE.BIN/
+ehthumbs.db
+
+# Backup files
+*.backup
+*.bkp

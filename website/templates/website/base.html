@@ -1,0 +1,92 @@
+{# templates/website/base.html #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}Super Suburban{% endblock %}</title>
+
+  <!-- Tailwind, fonts-->
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Brittany&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    .font-brittany { font-family: 'Brittany', cursive; }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+</head>
+<body class="bg-black text-black font-serif">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-black bg-opacity-90 text-white py-4 px-6 flex justify-between items-center z-50">
+    <div class="flex items-center">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/2.svg' %}" alt="Suburban logo" class="h-10"/>
+      </a>
+    </div>
+    <div class="hidden md:flex space-x-6 uppercase text-sm">
+      <a href="{% url 'home' %}"    class="hover:text-gray-300">Home</a>
+      <a href="{% url 'about' %}"   class="hover:text-gray-300">About Us</a>
+      <a href="{% url 'work' %}"    class="hover:text-gray-300">Our Work</a>
+      <a href="{% url 'contact' %}" class="hover:text-gray-300">Contact</a>
+    </div>
+    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+  <div class="h-20 md:h-16"></div>
+
+  <!-- MOBILE MENU -->
+  <aside id="mobile-menu"
+         class="fixed inset-y-0 left-0 w-64 bg-black bg-opacity-95 transform -translate-x-full transition-transform duration-300 md:hidden z-40">
+    <div class="px-6 py-4 flex justify-between items-center">
+      <span class="text-white font-bold text-xl">Menu</span>
+      <button id="mobile-menu-close" class="text-white focus:outline-none">&times;</button>
+    </div>
+    <nav class="mt-6 flex flex-col space-y-4 px-6">
+      <a href="{% url 'home' %}" class="text-white uppercase">Home</a>
+      <a href="{% url 'about' %}" class="text-white uppercase">About Us</a>
+      <a href="{% url 'work' %}" class="text-white uppercase">Our Work</a>
+      <a href="{% url 'contact' %}" class="text-white uppercase">Contact</a>
+    </nav>
+  </aside>
+
+  
+  <main>
+    {% block content %}
+    
+
+    {% endblock %}
+  </main>
+
+  
+ <!--  MOBILE MENU JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnOpen  = document.getElementById('mobile-menu-button');
+      const btnClose = document.getElementById('mobile-menu-close');
+      const menu     = document.getElementById('mobile-menu');
+      if (!btnOpen || !btnClose || !menu) return;
+
+      btnOpen.addEventListener('click', () => menu.classList.remove('-translate-x-full'));
+      btnClose.addEventListener('click', () => menu.classList.add('-translate-x-full'));
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('-translate-x-full'));
+      });
+    });
+  </script>
+</body>
+</html>
