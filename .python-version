@@ -1,2 +1,1 @@
-printf "3.12\n" > .python-version
-cat -A .python-version
+3.14
