@@ -1,1 +1,2 @@
-echo "3.12" > .python-version
+printf "3.12\n" > .python-version
+cat -A .python-version
