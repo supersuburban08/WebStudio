@@ -1,36 +1,22 @@
-{% extends "website/base.html" %} {% load static %} {% block title %}Super
-Suburban{% endblock %} {% block content %} {% if hero %}
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}Super Suburban{% endblock %}
+{% block content %}
+{% if hero %}
 <section class="relative h-screen overflow-hidden">
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    webkit-playsinline
-    class="absolute inset-0 w-full h-full object-cover"
-  >
+  <video autoplay muted loop playsinline webkit-playsinline class="absolute inset-0 w-full h-full object-cover">
     <source src="{{ hero.video.url }}" type="video/mp4" />
   </video>
 
-  <div
-    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center"
-  >
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
     <p class="text-sm uppercase tracking-widest mb-4">{{ hero.heading }}</p>
     <h2 class="text-base font-medium uppercase tracking-wide text-white mb-2">
       View Our Work
     </h2>
 
-    <a
-      href="{{ hero.button_link }}"
-      target="_blank"
-      class="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
+    <a href="{{ hero.button_link }}" target="_blank"
+      class="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M8 5v14l11-7z" />
       </svg>
     </a>
@@ -38,22 +24,18 @@ Suburban{% endblock %} {% block content %} {% if hero %}
 </section>
 {% endif %}
 
-<section class="relative bg-cover bg-center" style="background-image: url('{% static "images/contact-bg.jpg" %}');">
+<section class="relative bg-cover bg-center" style="background-image: url('{% static " images/contact-bg.jpg" %}');">
 
   <div class="bg-black bg-opacity-70 text-white">
-    <div
-      class="max-w-screen-xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12"
-    >
+    <div class="max-w-screen-xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12">
       <div class="space-y-6 text-center md:text-left">
         <h2 class="text-4xl font-bold tracking-widest uppercase">Contact Us</h2>
         <p class="text-lg leading-relaxed italic">
           Please fill out the form below or contact us directly via phone or
           email if you have any questions or want to set up a session!
         </p>
-        <a
-          href="{% url 'contact' %}"
-          class="inline-block bg-yellow-600 hover:bg-yellow-700 text-black font-semibold py-3 px-8 rounded transition"
-        >
+        <a href="{% url 'contact' %}"
+          class="inline-block bg-yellow-600 hover:bg-yellow-700 text-black font-semibold py-3 px-8 rounded transition">
           Get Started
         </a>
       </div>
@@ -71,22 +53,14 @@ Suburban{% endblock %} {% block content %} {% if hero %}
 </section>
 
 <footer class="bg-red-900 text-white">
-  <div
-    class="max-w-screen-xl mx-auto px-6 py-12 border-t border-gray-800 text-center space-y-6"
-  >
+  <div class="max-w-screen-xl mx-auto px-6 py-12 border-t border-gray-800 text-center space-y-6">
     <div class="space-y-1">
       <p class="font-semibold">CONTACT</p>
       <p>
-        <a
-          href="mailto:supersuburban08@gmail.com"
-          class="hover:underline text-yellow-400"
-          >supersuburban08@gmail.com</a
-        >
+        <a href="mailto:supersuburban08@gmail.com" class="hover:underline text-yellow-400">supersuburban08@gmail.com</a>
       </p>
       <p>
-        <a href="tel:+18709197623" class="hover:underline text-yellow-400"
-          >(870)-919-7623</a
-        >
+        <a href="tel:+18709197623" class="hover:underline text-yellow-400">(870)-919-7623</a>
       </p>
     </div>
     <p class="text-gray-400">&copy; {% now "Y" %} Super Suburban</p>
