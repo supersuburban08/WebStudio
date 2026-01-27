@@ -5,23 +5,125 @@
 {% block title %}About Us – Super Suburban{% endblock %}
 
 {% block content %}
-  {% for block in about_blocks %}
-    <section class="relative h-screen flex items-center justify-center text-center">
-      <img
-        src="{{ block.background.url }}"
-        alt="About background"
-        class="absolute inset-0 w-full h-full object-cover opacity-60"
-      />
+<div class="min-h-screen bg-black py-12">
 
-      <div class="relative z-10 px-4 max-w-3xl text-left text-white">
-        <ul class="list-disc list-inside space-y-2 text-2xl leading-relaxed">
-          {% for line in block.text.splitlines %}
-            {% if line %}
-            <li>{{ line }}</li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+
+  <!-- Card Section at Top - Full Width -->
+  <div class="w-full mb-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="py-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">About Us</h1>
+        <p class="text-xl text-gray-300 max-w-3xl">
+          Learn more about our story, mission, and the values that drive us forward.
+        </p>
       </div>
-    </section>
-  {% endfor %}
+      <div class="rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+        <!-- Use the static about.jpg image -->
+        <img src="{% static 'images/about.jpg' %}" alt="About Super Suburban"
+          class="w-full h-auto object-cover max-h-[600px]"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <!-- Fallback placeholder (hidden by default) -->
+        <div class="w-full h-96 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center hidden">
+          <div class="text-center">
+            <span class="text-white text-5xl font-bold block mb-4">Super Suburban</span>
+            <span class="text-gray-300 text-2xl">Building Better Communities</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Description Section Below Card -->
+  <div class="container mx-auto px-4">
+    <!-- Text Content Section -->
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Our Story</h2>
+
+        <div class="space-y-8 text-gray-300">
+          <div class="space-y-8">
+            <p class="text-lg leading-relaxed text-gray-300">
+              Welcome to Super Suburban, where innovation meets everyday life. We're dedicated to bringing cutting-edge
+              solutions to suburban communities.
+            </p>
+
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+              <h3 class="text-xl font-semibold text-white mb-4">Current Projects & Impact</h3>
+              <p class="text-gray-300 mb-4">
+                Our current parkings (projects) are designed to illuminate communities, much like lamps in a circuit.
+                Each project connects to our core mission - energizing suburban spaces and creating brighter
+                environments for families.
+              </p>
+              <ul class="space-y-3 text-gray-300">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>We adjust our approach (brightness) based on community needs and feedback</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Our projects are interconnected like lamps in a circuit - each one enhancing the others</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>We're the switch that activates positive change in suburban communities</span>
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-lg leading-relaxed text-gray-300">
+              Founded with a vision to transform suburban living, we combine technology, sustainability, and community
+              focus to create better environments for families. Just as a circuit needs proper connections to function
+              optimally, we believe in creating strong connections between people, technology, and sustainable living.
+            </p>
+
+            <div class="bg-gray-800 rounded-xl p-6 mt-8 border border-gray-700">
+              <h3 class="text-xl font-semibold text-white mb-4">Our Core Values</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="bg-blue-900 p-2 rounded-lg mr-4">
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                  <div>
+                    <span class="font-medium text-white">Innovative Solutions</span>
+                    <p class="text-gray-400 mt-1">For modern suburban life</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-blue-900 p-2 rounded-lg mr-4">
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                  <div>
+                    <span class="font-medium text-white">Sustainable Approaches</span>
+                    <p class="text-gray-400 mt-1">Eco-friendly and responsible development</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-blue-900 p-2 rounded-lg mr-4">
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                  <div>
+                    <span class="font-medium text-white">Community Focus</span>
+                    <p class="text-gray-400 mt-1">Driven by the needs of our communities</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional CTA Button -->
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+          <a href="/contact"
+            class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+            Get In Touch With Us
+          </a>
+          <p class="text-gray-500 mt-4">
+            Have questions? We'd love to hear from you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
