@@ -22,15 +22,16 @@
   </div>
 </section>
 
-<section class="relative bg-cover bg-center" style="background-image: url('{% static " images/contact-bg.jpg" %}');">
-
+<section class="relative bg-cover bg-center" style="background-image:url({% static 'images/contact-bg.jpg' %});">
   <div class="bg-black bg-opacity-70 text-white">
     <div class="max-w-screen-xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- CONTACT US -->
       <div class="space-y-6 text-center md:text-left">
         <h2 class="text-4xl font-bold tracking-widest uppercase">Contact Us</h2>
         <p class="text-lg leading-relaxed italic">
-          Please fill out the form below or contact us directly via phone or
-          email if you have any questions or want to set up a session!
+          Please fill out the form below or contact us directly via phone or email if you have any questions or want to
+          set up a session!
         </p>
         <a href="{% url 'contact' %}"
           class="inline-block bg-yellow-600 hover:bg-yellow-700 text-black font-semibold py-3 px-8 rounded transition">
@@ -38,14 +39,57 @@
         </a>
       </div>
 
+      <!-- FOLLOW US -->
       <div class="space-y-6 text-center md:text-left">
         <h2 class="text-4xl font-bold tracking-widest uppercase">Follow Us</h2>
         <p class="text-lg leading-relaxed italic">
-          Super Suburban is on major social media platforms and would love to
-          connect with you.
+          Super Suburban is on major social media platforms and would love to connect with you.
+          Follow us to stay up to date on everything new in the studio, deals, and much more!
         </p>
-        <!-- keep your social icons here -->
+        <div class="flex justify-center md:justify-start space-x-6 text-3xl">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/supersuburban08?igsh=NjRlMnAwNWRkbHRj&utm_source=qr" target="_blank"
+            class="hover:text-yellow-500 transition" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+              class="w-6 h-6 text-current hover:text-yellow-500 transition" role="img" aria-label="Instagram">
+              <path fill="currentColor"
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg>
+          </a>
+
+          <!-- facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61576107608080&mibextid=wwXIfr&rdid=xsVTK5W1IOUBQtGn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Hr82ZKjB1%2F%3Fmibextid%3DwwXIfr#"
+            target="_blank" class="hover:text-yellow-500 transition" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+              class="w-6 h-6 text-current hover:text-yellow-500 transition" role="img1" aria-label="Facebook">
+              <path fill="currentColor"
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
+            </svg>
+          </a>
+
+          <!-- youtube -->
+          <a href="https://www.youtube.com/@supersuburban" target="_blank" class="hover:text-yellow-500 transition"
+            aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+              class="w-6 h-6 text-current hover:text-yellow-500 transition" role="img2" aria-label="Youtube">
+              <path fill="currentColor"
+                d="M282 256.2l-95.2-54.1V310.3L282 256.2zM384 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm14.4 136.1c7.6 28.6 7.6 88.2 7.6 88.2s0 59.6-7.6 88.1c-4.2 15.8-16.5 27.7-32.2 31.9C337.9 384 224 384 224 384s-113.9 0-142.2-7.6c-15.7-4.2-28-16.1-32.2-31.9C42 315.9 42 256.3 42 256.3s0-59.7 7.6-88.2c4.2-15.8 16.5-28.2 32.2-32.4C110.1 128 224 128 224 128s113.9 0 142.2 7.7c15.7 4.2 28 16.6 32.2 32.4z" />
+            </svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://www.tiktok.com/@supsub08" target="_blank" class="hover:text-yellow-500 transition"
+            aria-label="X">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+              class="w-6 h-6 text-current hover:text-yellow-500 transition" role="img3" aria-label="TikTok">
+              <path fill="currentColor"
+                d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z" />
+            </svg>
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
